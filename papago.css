@@ -274,6 +274,10 @@ footer {
     푸터의 너비는 body를 상속받은 100%였음 좋겠어요.
     그리고 푸터 내부에 크게 두 줄로 이루어져있으니, 세로로 배치된 레이아웃이 좋겠네요.
     배경색은 조금 진한 #fbfbfb로 부탁드려요~ */
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: #fbfbfb;
 }
 
 #footer-first {
@@ -281,6 +285,9 @@ footer {
     이 요소의 너비는 푸터의 너비를 100%로 상속받았으면 좋겠어요.
     그리고 내부 여백이 상하 30px, 좌우 60px이면 좋겠네요.
     그리고... 잘 안보이지만 테두리가 얇게 있으니 하단에만 테두리를 "0.5px solid rgb(231, 231, 231)" 만큼 줄까요? */
+    width: 100%;
+    padding: 30px 60px;
+    border-bottom: 0.5px solid rgb(231, 231, 231);
 }
 
 #footer-first ul,
@@ -299,12 +306,19 @@ footer {
     말이 어렵지, 그냥 버튼과 글과 아이콘들을 감싸는 녀석입니다.
     그런데 레이아웃이 보니까.. 두개의 자식 태그를 갖고있네요?
     두개의 자식 태그의 메인 축이 양 끝에 있으면 좋겠는데요? */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #footer-first ul li {
   /* 첫 줄 콘텐츠 속 각각의 아이템들이에요.
     이녀석들은 보니까~  사이가 10px만큼 멀어지는게 좋겠네요!
     음.. 이녀석의 레이아웃이 display 였던가? display 안에서 아이템들의 간격을 주는 속성이...*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 #footer-first ul li span:nth-child(1) {
@@ -314,22 +328,37 @@ footer {
     폰트 사이즈는 12px, 굵기는 700, 배경색은 #1caafc, 폰트색은 white가 좋겠네요!
     내부 여백은 (상 3px 우 7px 하 4.5px 좌 7px) 이 좋겠어요!
     그리고 둥근 텍스트인 만큼, 라운딩이 500px 만큼 들어가면 좋겠어요! */
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #1caafc;
+    color: white;
+    padding: 3px 7px 4.5px 7px;
+    border-radius: 500px;
+    
 }
 
 #footer-first ul li span:nth-child(2) {
   /* 두 번째 자식이네요! new 옆에 있는 텍스트를 의미해요.
     폰트 사이즈는 13px, 굵기는 600, 색상은 #474747, 내부 여백은 하단만 1.5px이 좋겠어요! */
+    font-size: 13px;
+    font-weight: 600;
+    color: #474747;
+    padding-bottom: 1.5px;
 }
 
 #footer-first ul li img:nth-child(1) {
   /* 이번엔 첫 번재 이미지 자식이네요.
     이미지의 높이는 16px로 하고, 너비는 높이에 맞게 자동으로 맞춰주세요!
     기억이 안난다면 ctrl(command)+f 누른 후 'auto'를 검색해볼까요? */
+    height: 16px;
+    width: auto;
 }
 
 #footer-first ul li img:nth-child(2) {
   /* 두 번째 이미지 자식이에요.
     높이는 20px, 너비는 자동으로 맞춰줄게요. */
+    height: 20px;
+    width: auto;
 }
 
 #footer-second {
@@ -337,11 +366,22 @@ footer {
     너비는 부모를 상속받은 100%, 레이아웃은 내부적으로 또 두 줄로 나눌 수 있을 것 같으니 세로로 배치해볼까요?
     내부 여백은 (상 30px 우 60px 하 50px 좌 60px)로 구성해주세요.
     아이템 사이의 여백은 20px입니다. */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 60px 50px 60px;
+    gap: 20px;
 }
 
 #footer-second ul:nth-child(1) {
   /* 푸터의 두 번재 줄 속 첫 번째 줄이네요... 말이 어렵지만 앱 다운로드 버튼이 있는 줄이에요!
     너비는 상속받은 100%로 하고, 레이아웃 배치는 가로로 하되 메인축은 각각 옆으로 찢어진 형태, 교차축은 중앙으로 맞춰주세요! */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #footer-second ul:nth-child(1) li:not(#language-box) {
@@ -372,6 +412,8 @@ footer {
 #app-icon img {
   /* 파파고 로고예요.
     너비는 부모의 80%, 높이는 자동으로 맞추어졌으면 좋겠어요. */
+    width: 80%;
+    height: auto;
 }
 
 #language-box {
@@ -379,6 +421,12 @@ footer {
     폰트 크기는 13px, 굵기는 700, 배경색은 #adadad, 폰트 색은 white가 좋겠어요.
     내부 여백은 상하 5px, 좌우 10px으로 해주세요!
     둥글둥글한 박스니까 라운딩은 500px로 부탁드릴게요~ */
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    background-color: #adadad;
+    padding: 5px 10px;
+    border-radius: 500px;
 }
 
 #footer-second ul:nth-child(2) {
@@ -386,12 +434,22 @@ footer {
     위에서부터 아래까지 세로 방향으로 레이아웃이 배치되면 좋겠군요!
     각 아이템 (줄) 끼리 여백은 5px이면 충분하겠네요.
     그리고 내부에 들어가는 폰트들의 크기는 13px, 굵기는 500, 색상은 #474747로 맞춰주세요! */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #474747;
 }
 
 #footer-second ul:nth-child(2) li {
   /* 이용약관부터 쭈욱 나열된 곳의, 한 줄이에요!
     한 줄이니까 가로로 배치된 레이아웃이겠네요.
     각 아이템 별 여백은 10px씩 가지면 좋을 것 같습니다ㅎㅎ */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 #footer-second ul:nth-child(2) li span {

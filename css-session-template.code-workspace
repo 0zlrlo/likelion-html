@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "css-session-template",
+			"path": "../css-session-template"
+		},
+		{
+			"name": "likelion-html",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "likelion-html"
+	}
+}
